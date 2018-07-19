@@ -5,6 +5,7 @@ You won't guess how many whole human faces this face recognizer can recognize!!!
 
 
 TASKS:
+
 -camera to image array
 
 -image files to image array
