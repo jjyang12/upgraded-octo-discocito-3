@@ -70,8 +70,8 @@ def match_image_to_descriptors(image):
             
         Returns
         -------
-        The list of dlib rectangles for detected faces and an array of the 
-        descriptors of all faces present in the image array. """
+        An array of the descriptors of all faces present in the image array
+        and the list of dlib rectangles for detected faces. """
     
     detections = list(face_detect(image))
     out = []
@@ -81,4 +81,4 @@ def match_image_to_descriptors(image):
         descriptor = np.array(face_rec_model.compute_face_descriptor(image, shape))
         out.append(descriptor)
         
-    return (detections, np.array(out))
+    return (np.array(out), detections)
