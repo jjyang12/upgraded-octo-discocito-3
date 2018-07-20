@@ -27,9 +27,13 @@ TASKS:
 
 GREAT WORK TEAM!
 
-~inspirational quotes~
+
+~ inspirational quotes ~
 
 "mY HAndS ArE fULl of ORaNgeS" -alexey
+
 "watermelon skin? you mean the shell?" -jenny
+
 "milk meter" -christina
+
 "i want food" -sam
