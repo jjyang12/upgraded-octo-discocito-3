@@ -4,7 +4,7 @@ time to FACE the truth...(EMOTIONAL) (*NOT CLICKBAIT*)
 You won't guess how many whole human faces this face recognizer can recognize!!! 20 (also not clickbait)!
 
 
-TASKS:
+### TASKS:
 
 -camera to image array
 
@@ -28,7 +28,7 @@ TASKS:
 GREAT WORK TEAM!
 
 
-~ inspirational quotes ~
+### ~ inspirational quotes ~
 
 "mY HAndS ArE fULl of ORaNgeS" -alexey
 

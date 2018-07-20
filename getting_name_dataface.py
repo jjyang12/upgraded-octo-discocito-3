@@ -18,7 +18,7 @@ def match_descriptor_in_dataface(dataface, descrip_array, threshold=.35):
     labels: np.ndarray (N,) with names of people in the image, matching the indexes of the input. 
         If distance is above threshold, returns -1"""
     
-    print(descrip_array.shape[0])
+    #print(descrip_array.shape[0])
     labels = ["" for x in range(descrip_array.shape[0])]
     for i,d in enumerate(descrip_array):
         min_dist = 100
@@ -31,7 +31,7 @@ def match_descriptor_in_dataface(dataface, descrip_array, threshold=.35):
                 min_dist = dist
                 labels[i] = key
         if min_dist > threshold:
-            labels[i] = -1
+            labels[i] = 'Unknown'
               
     return labels
         

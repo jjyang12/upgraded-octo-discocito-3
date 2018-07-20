@@ -10,33 +10,6 @@ face_detect = models["face detect"]
 face_rec_model = models["face rec"]
 shape_predictor = models["shape predict"]
 
-from camera import take_picture
-
-def camera_to_image_array():
-    """ Takes a picture and loads it as an image array.
-                            
-        Returns
-        -------
-        The picture as an image array. """    
-    
-    return take_picture()
-
-import skimage.io as io 
-
-def image_file_to_image_array(path):
-    """ Given an image file, load the file as an image array.
-    
-        Parameters
-        ----------
-        path : string
-            describes the path of the image
-                        
-        Returns
-        -------
-        The image file as an image array. """
-    
-    return io.imread(path)
-
 def load_image_to_descriptors(image, name):
     """ Given an image array with 1 known face, return the description
     vector of that face. 
