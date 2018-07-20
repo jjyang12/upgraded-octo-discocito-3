@@ -31,7 +31,7 @@ def match_descriptor_in_dataface(dataface, descrip_array, threshold=.35):
                 min_dist = dist
                 labels[i] = key
         if min_dist > threshold:
-            labels[i] = -1
+            labels[i] = 'Unknown'
               
     return labels
         
