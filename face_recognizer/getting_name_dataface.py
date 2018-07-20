@@ -3,7 +3,7 @@ import numpy as np
 from scipy.spatial.distance import euclidean
 
 
-def match_descriptor_in_dataface(dataface, descrip_array, threshold=.35):
+def match_descriptor_in_dataface(dataface, descrip_array, threshold=.4):
     
     """
     Given dictionary and a list of face descriptors, returns an array with names corresponding with descrip_array input
