@@ -13,7 +13,7 @@ def faceID(pic, detections, names):
         names - The list of names associated with the faces. Indexing should correlate with detections.
         
     OUTPUT:
-        None.
+        ax - The plot's ax, so that an emotion ID can also be plotted.
     '''
     
     assert len(detections) == len(names), 'Names list must correlate with detections list.'
@@ -29,4 +29,6 @@ def faceID(pic, detections, names):
         rect = Rectangle((l,b) , r - l, t - b, fill = False)
         ax.add_patch(rect)
     
-        loc = text(l + 7, b - 11, names[k], bbox = dict(facecolor='white', alpha=1))
+        loc = text(l, b - 20, names[k], bbox = dict(facecolor='white', alpha=1))
+        
+    return ax
