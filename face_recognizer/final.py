@@ -14,4 +14,5 @@ def faceRec():
     out, rect = match(face_detect, face_rec_model, shape_predictor, pic)
     names = lookup(dataface, out)
     ax = faceID(pic, rect, names)
-    emotionID(pic, ax, face_detect, shape_predictor, create_model())
+    emotion = emotionID(pic, ax, face_detect, shape_predictor, create_model())
+    return emotion
