@@ -9,7 +9,7 @@ from face_recognizer.dataface_funcs import pickOpen
 
 def faceRec():
     pic = cam()
-    dataface = pickOpen()
+    dataface = pickOpen(path = 'dataface/dataface.dat')
     face_detect, face_rec_model, shape_predictor = load()
     out, rect = match(face_detect, face_rec_model, shape_predictor, pic)
     names = lookup(dataface, out)
@@ -30,7 +30,7 @@ def faceRec2(img_arr):
         -------
         The emotion. """    
     
-    dataface = pickOpen()
+    dataface = pickOpen(path = 'dataface/dataface.dat')
     face_detect, face_rec_model, shape_predictor = load()
     out, rect = match(face_detect, face_rec_model, shape_predictor, img_arr)
     names = lookup(dataface, out)
