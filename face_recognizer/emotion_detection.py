@@ -9,15 +9,19 @@ from matplotlib.pyplot import text
 import pylab as plt
 from mynn.activations.softmax import softmax
 
-def create_model():
+def create_model(path):
     '''
     Creates the emotion detection model using trained parameters.
-        
+    
+    PARAMETERS:
+        path : string
+            the path to the emotion neural net parameters
+    
     OUTPUT:
         An instance of a trained emotion detection model.
     '''
     
-    with open("emotion_net_parameters.dat", mode="rb") as f:
+    with open(path, mode="rb") as f:
         new_parameters = pickle.load(f)
 
     class Model:
