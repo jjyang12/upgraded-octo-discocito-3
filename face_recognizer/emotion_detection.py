@@ -53,7 +53,7 @@ def emotionID(pic, ax, face_detect, shape_predictor, emotion_detect):
         emotion_detect - The emotion detection model.
         
     OUTPUT:
-        None.
+        emotion - The detected emotion.
     '''
     
     detections = list(face_detect(pic))
@@ -84,4 +84,4 @@ def emotionID(pic, ax, face_detect, shape_predictor, emotion_detect):
     ax.add_patch(rect)
 
     loc = text(l, b + 40, top_emotion, bbox = dict(facecolor='white', alpha=1))
-    return
+    return top_emotion
