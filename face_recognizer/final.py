@@ -1,11 +1,11 @@
-from faceID import faceID
-from emotion_detection import create_model, emotionID
-from camera_to_image_array import camera_to_image_array as cam
-from dataface_funcs import dataface_add
-from getting_name_dataface import match_descriptor_in_dataface as lookup
-from image_array_to_descriptors import load_dlib as load
-from image_array_to_descriptors import match_image_to_descriptors as match
-from dataface_funcs import pickOpen
+from face_recognizer.faceID import faceID
+from face_recognizer.emotion_detection import create_model, emotionID
+from face_recognizer.camera_to_image_array import camera_to_image_array as cam
+from face_recognizer.dataface_funcs import dataface_add
+from face_recognizer.getting_name_dataface import match_descriptor_in_dataface as lookup
+from face_recognizer.image_array_to_descriptors import load_dlib as load
+from face_recognizer.image_array_to_descriptors import match_image_to_descriptors as match
+from face_recognizer.dataface_funcs import pickOpen
 
 def faceRec():
     pic = cam()
