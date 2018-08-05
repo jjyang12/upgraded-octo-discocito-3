@@ -7,9 +7,21 @@ from face_recognizer.image_array_to_descriptors import load_dlib as load
 from face_recognizer.image_array_to_descriptors import match_image_to_descriptors as match
 from face_recognizer.dataface_funcs import pickOpen
 
-def faceRec():
+def faceRec(path):
+    """ Performs face and emotion recognition on an image 
+    taken from the camera.
+        
+        Parameters
+        ----------
+        path : string
+            path to dataface
+                
+        Returns
+        -------
+        The emotion. """  
+    
     pic = cam()
-    dataface = pickOpen(path = 'dataface/dataface.dat')
+    dataface = pickOpen(path)
     face_detect, face_rec_model, shape_predictor = load()
     out, rect = match(face_detect, face_rec_model, shape_predictor, pic)
     names = lookup(dataface, out)
@@ -17,12 +29,15 @@ def faceRec():
     emotion = emotionID(pic, ax, face_detect, shape_predictor, create_model())
     return emotion
 
-def faceRec2(img_arr):
+def faceRec2(path, img_arr):
     """ Performs face and emotion recognition on an image 
     array, rather than on a picture taken from the camera.
         
         Parameters
         ----------
+        path : string
+            path to dataface
+        
         img_arr : nd.array
             the image, as an array
         
@@ -30,7 +45,7 @@ def faceRec2(img_arr):
         -------
         The emotion. """    
     
-    dataface = pickOpen(path = 'dataface/dataface.dat')
+    dataface = pickOpen(path)
     face_detect, face_rec_model, shape_predictor = load()
     out, rect = match(face_detect, face_rec_model, shape_predictor, img_arr)
     names = lookup(dataface, out)
