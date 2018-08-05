@@ -30,8 +30,8 @@ def faceRec(path):
     return emotion
 
 def faceRec2(path, img_arr):
-    """ Performs face and emotion recognition on an image 
-    array, rather than on a picture taken from the camera.
+    """ Performs emotion recognition on an image array, 
+    rather than on a picture taken from the camera.
         
         Parameters
         ----------
@@ -50,5 +50,5 @@ def faceRec2(path, img_arr):
     out, rect = match(face_detect, face_rec_model, shape_predictor, img_arr)
     names = lookup(dataface, out)
     ax = faceID(img_arr, rect, names)
-    emotion = emotionID(img_arr, ax, face_detect, shape_predictor, create_model())
+    emotion = emotionID(img_arr, ax, face_detect, shape_predictor, create_model('emotion_net_parameters.dat'))
     return emotion
