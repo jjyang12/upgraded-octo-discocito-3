@@ -18,7 +18,7 @@ def faceRec(path):
                 
         Returns
         -------
-        The emotion. """  
+        The name and emotion. """  
     
     pic = cam()
     dataface = pickOpen(path)
@@ -27,7 +27,7 @@ def faceRec(path):
     names = lookup(dataface, out)
     ax = faceID(pic, rect, names)
     emotion = emotionID(pic, ax, face_detect, shape_predictor, create_model())
-    return emotion
+    return (names, emotion)
 
 def faceRec2(path, img_arr):
     """ Performs face and emotion recognition on an image 
@@ -43,7 +43,7 @@ def faceRec2(path, img_arr):
         
         Returns
         -------
-        The emotion. """    
+        The name and emotion. """    
     
     dataface = pickOpen(path)
     face_detect, face_rec_model, shape_predictor = load()
@@ -51,4 +51,4 @@ def faceRec2(path, img_arr):
     names = lookup(dataface, out)
     ax = faceID(img_arr, rect, names)
     emotion = emotionID(img_arr, ax, face_detect, shape_predictor, create_model())
-    return emotion
+    return (names, emotion)
