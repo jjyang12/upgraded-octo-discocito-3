@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 def do_setup():
-    setup(name='facerec',
+    setup(name='face_recognizer',
           version="0.0",
           author='upgraded-octo-discocito-3',
           description="it's time to FACE the truth...(EMOTIONAL) (*NOT CLICKBAIT*)",
