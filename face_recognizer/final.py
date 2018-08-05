@@ -16,3 +16,24 @@ def faceRec():
     ax = faceID(pic, rect, names)
     emotion = emotionID(pic, ax, face_detect, shape_predictor, create_model())
     return emotion
+
+def faceRec2(img_arr):
+    """ Performs face and emotion recognition on an image 
+    array, rather than on a picture taken from the camera.
+        
+        Parameters
+        ----------
+        img_arr : nd.array
+            the image, as an array
+        
+        Returns
+        -------
+        The emotion. """    
+    
+    dataface = pickOpen()
+    face_detect, face_rec_model, shape_predictor = load()
+    out, rect = match(face_detect, face_rec_model, shape_predictor, img_arr)
+    names = lookup(dataface, out)
+    ax = faceID(img_arr, rect, names)
+    emotion = emotionID(img_arr, ax, face_detect, shape_predictor, create_model())
+    return emotion
