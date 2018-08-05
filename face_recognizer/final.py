@@ -6,6 +6,7 @@ from face_recognizer.getting_name_dataface import match_descriptor_in_dataface a
 from face_recognizer.image_array_to_descriptors import load_dlib as load
 from face_recognizer.image_array_to_descriptors import match_image_to_descriptors as match
 from face_recognizer.dataface_funcs import pickOpen
+import pylab as plt
 
 def faceRec(path):
     """ Performs face and emotion recognition on an image 
@@ -45,10 +46,7 @@ def faceRec2(path, img_arr):
         -------
         The emotion. """    
     
-    dataface = pickOpen(path)
     face_detect, face_rec_model, shape_predictor = load()
-    out, rect = match(face_detect, face_rec_model, shape_predictor, img_arr)
-    names = lookup(dataface, out)
-    ax = faceID(img_arr, rect, names)
+    fig, ax = plt.subplots()
     emotion = emotionID(img_arr, ax, face_detect, shape_predictor, create_model('emotion_net_parameters.dat'))
     return emotion
