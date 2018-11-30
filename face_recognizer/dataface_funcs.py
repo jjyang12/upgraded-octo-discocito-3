@@ -30,6 +30,9 @@ def dataface_add(dataface, name, descriptor, amount=0.25):
         old = dataface[name]
         dataface[name] = (1-amount) * old + amount * descriptor
 
+def dataface_remove(dataface, name):
+    del dataface[name]
+        
 from pickle import load, dump
 
 def pickOpen(path = '../dataface/dataface.dat'):

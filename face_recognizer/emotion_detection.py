@@ -9,7 +9,7 @@ from matplotlib.pyplot import text
 import pylab as plt
 from mynn.activations.softmax import softmax
 
-def create_model(path):
+def create_model(path="emotion_net_parameters.dat"):
     '''
     Creates the emotion detection model using trained parameters.
     
